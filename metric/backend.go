@@ -55,7 +55,7 @@ func Register(name string, b backendFactory) {
 func Get(name string) (Backend, error) {
 	factory, ok := backends[name]
 	if !ok {
-		return nil, fmt.Errorf("unknown backend: %q.", name)
+		return nil, fmt.Errorf("unknown backend: %q", name)
 	}
 	r, err := factory()
 	if err != nil {
